@@ -22,6 +22,8 @@ namespace Sagra.Assets._Scripts._General
             {
                 var playerEntity = systems.GetWorld().NewEntity();
                 ref var cellData = ref systems.GetWorld().GetPool<BuisnessStateStruct>().Add(playerEntity);
+
+                cellData.View = view;
             }
         }
     }

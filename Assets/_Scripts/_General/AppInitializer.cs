@@ -1,7 +1,9 @@
 ﻿using Assets._Scripts._Puzzle;
 using Coin.Assets._Scripts._Puzzle;
 using Leopotam.EcsLite;
+using Sagra.Assets._Scripts._Data;
 using Sagra.Assets._Scripts._UI;
+using Sagra.Assets._Scripts._UserData;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +11,8 @@ namespace Sagra.Assets._Scripts._General
 {
     public class AppInitializer : MonoBehaviour
     {
+        [SerializeField] private BuisnessDataItemsHolder _buisnessDataItemsHolder;
+        [SerializeField] private StorageSO _storageSO;
         [SerializeField] private List<BuisnessItemView> _itemsViews;
 
         private EcsSystems _systems;
@@ -21,11 +25,14 @@ namespace Sagra.Assets._Scripts._General
 
         void Start()
         {
+            _storageSO.Init();
+
             _ecsWorld = new EcsWorld();
             _systems = new EcsSystems(_ecsWorld);
 
             _systems
                 .Add(new InitViewsSystem(_itemsViews))
+                .Add(new InitDataSystem(_storageSO, _buisnessDataItemsHolder))
                 .Init();
         }
 

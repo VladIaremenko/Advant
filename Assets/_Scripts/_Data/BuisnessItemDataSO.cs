@@ -8,6 +8,7 @@ namespace Sagra.Assets._Scripts._Data
     {
         public string Title;
         public float BasicIncome;
+        public float BasicPrice;
 
         public BuisnessUpgrade Upgrade1;
         public BuisnessUpgrade Upgrade2;

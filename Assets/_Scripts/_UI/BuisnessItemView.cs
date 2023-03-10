@@ -13,6 +13,10 @@ namespace Sagra.Assets._Scripts._UI
         [SerializeField] private TextMeshProUGUI _levelUpButtonText;
         [SerializeField] private TextMeshProUGUI _upgradeButton1Text;
         [SerializeField] private TextMeshProUGUI _upgradeButton2Text;
+
+        public TextMeshProUGUI TitleText => _titleText;
+        public TextMeshProUGUI CurrentLevelText => _currentLevelText;
+        public TextMeshProUGUI CurrentIncomeText => _currentIncomeText;
     }
 }
 
