@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: BuisnessItemDataSO 1
   m_EditorClassIdentifier: 
   Title: Buisness Item 1
-  BasicIncome: 555
-  BasicPrice: 50
+  BasicIncome: 40
+  BasicPrice: 40
   Upgrade1:
-    Price: 33
-    IncomeIncrease: 2
+    Price: 1200
+    IncomeIncrease: 100
   Upgrade2:
-    Price: 44
-    IncomeIncrease: 6
+    Price: 4000
+    IncomeIncrease: 200
