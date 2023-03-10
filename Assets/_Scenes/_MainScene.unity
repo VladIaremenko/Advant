@@ -1773,15 +1773,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53b9a4033c70d34e915de64d9f21892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buisnessViewModel: {fileID: 11400000, guid: 0618d56e4619aa7428a3dcc03d08ce58, type: 2}
   _buisnessDataItemsHolder: {fileID: 11400000, guid: 1aab0cb5b52f1f045b9c5623da763632, type: 2}
   _storageSO: {fileID: 11400000, guid: 21b4bde7532bddd40bba50c3a4d7b5e1, type: 2}
+  _balanceText: {fileID: 2074295223}
   _itemsViews:
   - {fileID: 1842732941}
   - {fileID: 957674667}
   - {fileID: 1359225002}
   - {fileID: 449160947}
   - {fileID: 1060809553}
-  _buisnessViewModel: {fileID: 11400000, guid: 0618d56e4619aa7428a3dcc03d08ce58, type: 2}
 --- !u!224 &1842732938 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 526885150189382015, guid: c3e7e8e87e1c39e4bad31c8f539c01e0, type: 3}

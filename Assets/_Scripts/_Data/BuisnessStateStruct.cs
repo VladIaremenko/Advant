@@ -1,4 +1,5 @@
 ﻿using Sagra.Assets._Scripts._UI;
+using TMPro;
 using UnityEngine;
 
 namespace Sagra.Assets._Scripts._Data
@@ -14,6 +15,12 @@ namespace Sagra.Assets._Scripts._Data
         public int Id;
 
         public BuisnessItemView View;
+    }
+
+    public struct BalanceStateStruct
+    {
+        public TextMeshProUGUI BalanceText;
+        public float BalanceAmount;
     }
 
     public struct ViewsToUpdate

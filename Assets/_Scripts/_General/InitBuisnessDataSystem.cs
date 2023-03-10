@@ -6,12 +6,12 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 namespace Sagra.Assets._Scripts._General
 {
-    public class InitDataSystem : IEcsInitSystem
+    public class InitBuisnessDataSystem : IEcsInitSystem
     {
         private StorageSO _storage;
         private BuisnessDataItemsHolder _dataHolder;
 
-        public InitDataSystem(StorageSO storage, BuisnessDataItemsHolder dataHolder)
+        public InitBuisnessDataSystem(StorageSO storage, BuisnessDataItemsHolder dataHolder)
         {
             _storage = storage;
             _dataHolder = dataHolder;

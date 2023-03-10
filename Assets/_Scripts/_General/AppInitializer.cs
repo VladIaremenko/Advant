@@ -5,6 +5,7 @@ using Sagra.Assets._Scripts._Data;
 using Sagra.Assets._Scripts._UI;
 using Sagra.Assets._Scripts._UserData;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace Sagra.Assets._Scripts._General
@@ -14,6 +15,7 @@ namespace Sagra.Assets._Scripts._General
         [SerializeField] private BuisnessViewModel _buisnessViewModel;
         [SerializeField] private BuisnessDataItemsHolder _buisnessDataItemsHolder;
         [SerializeField] private StorageSO _storageSO;
+        [SerializeField] private TextMeshProUGUI _balanceText;
         [SerializeField] private List<BuisnessItemView> _itemsViews;
 
         private EcsSystems _systems;
@@ -32,8 +34,8 @@ namespace Sagra.Assets._Scripts._General
             _systems = new EcsSystems(_ecsWorld);
 
             _systems
-                .Add(new InitViewsSystem(_itemsViews))
-                .Add(new InitDataSystem(_storageSO, _buisnessDataItemsHolder))
+                .Add(new InitViewsSystem(_itemsViews, _balanceText))
+                .Add(new InitBuisnessDataSystem(_storageSO, _buisnessDataItemsHolder))
                 .Add(new UpdateViewsSystem())
                 .Add(new UserInputSystem(_buisnessViewModel))
                 .Init();
