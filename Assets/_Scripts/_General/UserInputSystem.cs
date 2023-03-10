@@ -50,7 +50,7 @@ namespace Sagra.Assets._Scripts._General
                     {
                         _storage.Balance -= upgradePrice;
                         _storage.UserDataContainer.BuisnesStates[id].Level++;
-                        _storage.UserDataContainer.BuisnesStates[id].Level = _storage.UserDataContainer.BuisnesStates[id].Level;
+                        _storage.UserDataContainer = _storage.UserDataContainer;
 
                         data.CurrentLevel++;
 
