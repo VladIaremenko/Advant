@@ -1,10 +1,12 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Sagra.Assets._Scripts._UI
 {
     public class BuisnessItemView : MonoBehaviour
     {
+        [SerializeField] private Slider _slider;
         [SerializeField] private TextMeshProUGUI _titleText;
         [SerializeField] private TextMeshProUGUI _currentLevelText;
         [SerializeField] private TextMeshProUGUI _currentIncomeText;
