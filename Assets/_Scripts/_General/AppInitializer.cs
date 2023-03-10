@@ -34,10 +34,12 @@ namespace Sagra.Assets._Scripts._General
             _systems = new EcsSystems(_ecsWorld);
 
             _systems
+                .Add(new UserInputSystem(_buisnessViewModel, _storageSO, _buisnessDataItemsHolder))
                 .Add(new InitViewsSystem(_itemsViews, _balanceText))
                 .Add(new InitBuisnessDataSystem(_storageSO, _buisnessDataItemsHolder))
-                .Add(new UpdateViewsSystem())
-                .Add(new UserInputSystem(_buisnessViewModel))
+                .Add(new InitBalanceDataSystem(_storageSO))
+                .Add(new UpdateBuisnessViewsSystem())
+                .Add(new UpdateBalanceViewSystem())
                 .Init();
         }
 

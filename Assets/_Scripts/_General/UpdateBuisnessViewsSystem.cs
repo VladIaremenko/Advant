@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Sagra.Assets._Scripts._General
 {
-    public class UpdateViewsSystem : IEcsRunSystem
+    public class UpdateBuisnessViewsSystem : IEcsRunSystem
     {
         public void Run(IEcsSystems systems)
         {

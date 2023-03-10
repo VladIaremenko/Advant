@@ -32,7 +32,7 @@ namespace Sagra.Assets._Scripts._UserData
                 _levelStateData = JsonConvert.DeserializeObject<UserDataContainer>(json);
             }
 
-            _balance = PlayerPrefs.GetFloat(BalanceKey, _balance);
+            _balance = PlayerPrefs.GetFloat(BalanceKey, _startBalance);
         }
 
         private UserDataContainer _levelStateData;
