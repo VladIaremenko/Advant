@@ -22,6 +22,7 @@ namespace Sagra.Assets._Scripts._General
             var world = systems.GetWorld();
             var filter = world.Filter<BuisnessStateStruct>().End();
             var allData = world.GetPool<BuisnessStateStruct>();
+            var viewsToUpdatePool = world.GetPool<ViewsToUpdate>();
             var states = _storage.UserDataContainer.BuisnesStates;
 
             int num = 0;
@@ -29,6 +30,9 @@ namespace Sagra.Assets._Scripts._General
             foreach (var entity in filter)
             {
                 ref var data = ref allData.Get(entity);
+
+                viewsToUpdatePool.Add(entity);
+
                 var soData = _dataHolder.Items[num];
 
                 data.Title = soData.Title;

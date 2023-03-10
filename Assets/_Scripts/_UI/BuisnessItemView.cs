@@ -17,7 +17,6 @@ namespace Sagra.Assets._Scripts._UI
         public TextMeshProUGUI TitleText => _titleText;
         public TextMeshProUGUI CurrentLevelText => _currentLevelText;
         public TextMeshProUGUI CurrentIncomeText => _currentIncomeText;
+        public TextMeshProUGUI LevelUpButtonText => _levelUpButtonText;
     }
 }
-
-

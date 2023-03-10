@@ -33,6 +33,7 @@ namespace Sagra.Assets._Scripts._General
             _systems
                 .Add(new InitViewsSystem(_itemsViews))
                 .Add(new InitDataSystem(_storageSO, _buisnessDataItemsHolder))
+                .Add(new UpdateViewsSystem())
                 .Init();
         }
 
