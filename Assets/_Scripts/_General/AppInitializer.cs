@@ -11,6 +11,7 @@ namespace Sagra.Assets._Scripts._General
 {
     public class AppInitializer : MonoBehaviour
     {
+        [SerializeField] private BuisnessViewModel _buisnessViewModel;
         [SerializeField] private BuisnessDataItemsHolder _buisnessDataItemsHolder;
         [SerializeField] private StorageSO _storageSO;
         [SerializeField] private List<BuisnessItemView> _itemsViews;
@@ -34,6 +35,7 @@ namespace Sagra.Assets._Scripts._General
                 .Add(new InitViewsSystem(_itemsViews))
                 .Add(new InitDataSystem(_storageSO, _buisnessDataItemsHolder))
                 .Add(new UpdateViewsSystem())
+                .Add(new UserInputSystem(_buisnessViewModel))
                 .Init();
         }
 

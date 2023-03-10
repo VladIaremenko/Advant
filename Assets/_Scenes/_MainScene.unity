@@ -1781,6 +1781,7 @@ MonoBehaviour:
   - {fileID: 1359225002}
   - {fileID: 449160947}
   - {fileID: 1060809553}
+  _buisnessViewModel: {fileID: 11400000, guid: 0618d56e4619aa7428a3dcc03d08ce58, type: 2}
 --- !u!224 &1842732938 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 526885150189382015, guid: c3e7e8e87e1c39e4bad31c8f539c01e0, type: 3}

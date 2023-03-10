@@ -755,6 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 551bbdeca69077442a4560fe410ceee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buisnessViewModel: {fileID: 11400000, guid: 0618d56e4619aa7428a3dcc03d08ce58, type: 2}
   _slider: {fileID: 526885150578953697}
   _titleText: {fileID: 526885150010183285}
   _currentLevelText: {fileID: 526885150649593286}
@@ -762,6 +763,7 @@ MonoBehaviour:
   _levelUpButtonText: {fileID: 526885151197002098}
   _upgradeButton1Text: {fileID: 526885150241805134}
   _upgradeButton2Text: {fileID: 526885150409523210}
+  _upgradeButton: {fileID: 526885149693414509}
 --- !u!1 &526885150223268459
 GameObject:
   m_ObjectHideFlags: 0

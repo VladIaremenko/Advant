@@ -11,6 +11,8 @@ namespace Sagra.Assets._Scripts._Data
         public int CurrentLevel;
         public float Upgrade1Multiplier;
         public float Upgrade2Multiplier;
+        public int Id;
+
         public BuisnessItemView View;
     }
 

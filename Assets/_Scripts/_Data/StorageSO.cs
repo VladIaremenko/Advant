@@ -8,7 +8,10 @@ namespace Sagra.Assets._Scripts._UserData
     [CreateAssetMenu(fileName = "StorageSO", menuName = "SO/Data/StorageSO", order = 1)]
     public class StorageSO : ScriptableObject
     {
+        [SerializeField] private float _startBalance;
+
         private static readonly string UserDataContainerKey = "UserDataContainerKey";
+        private static readonly string BalanceKey = "BalanceKey";
 
         public void Init()
         {
@@ -28,6 +31,8 @@ namespace Sagra.Assets._Scripts._UserData
             {
                 _levelStateData = JsonConvert.DeserializeObject<UserDataContainer>(json);
             }
+
+            _balance = PlayerPrefs.GetFloat(BalanceKey, _balance);
         }
 
         private UserDataContainer _levelStateData;
@@ -39,6 +44,17 @@ namespace Sagra.Assets._Scripts._UserData
             {
                 PlayerPrefs.SetString(UserDataContainerKey, JsonConvert.SerializeObject(value));
                 _levelStateData = value;
+            }
+        }
+
+        private float _balance;
+
+        public float Balance
+        {
+            get { return _balance; }
+            set {
+                PlayerPrefs.SetFloat(BalanceKey, value);
+                _balance = value; 
             }
         }
     }

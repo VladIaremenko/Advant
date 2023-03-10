@@ -39,6 +39,8 @@ namespace Sagra.Assets._Scripts._General
                 data.BasicIncome = soData.BasicIncome;
                 data.BasicPrice = soData.BasicPrice;
                 data.CurrentLevel = states[num].Level;
+                data.Id = num;
+                data.View.ID = num;
 
                 num++;
             }
