@@ -61,7 +61,10 @@ namespace Sagra.Assets._Scripts._General
 
                         _storageSO.Balance = dataBalance.BalanceAmount;
 
-                        viewsToUpdatePool.Add(entityBalance);
+                        if (!viewsToUpdatePool.Has(entityBalance))
+                        {
+                            viewsToUpdatePool.Add(entityBalance);
+                        }
                     }
                 }
             }
