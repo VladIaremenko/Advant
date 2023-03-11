@@ -32,6 +32,12 @@ namespace Sagra.Assets._Scripts._General
 
                 data.View.LevelUpButtonText.text = $"LEVEL UP\nPrice: {upgradePrice}$";
 
+                data.View.Upgrade1ButtonText.text = $"Title\n{data.Upgrade1Data.IncomeMultiplier}\n" +
+                    $"{(data.Upgrade1Bought ? "Purchased" : $"Price: {data.Upgrade1Data.Price}$")}";
+
+                data.View.Upgrade2ButtonText.text = $"Title\n{data.Upgrade2Data.IncomeMultiplier}\n" +
+                    $"{(data.Upgrade2Bought ? "Purchased" : $"Price: {data.Upgrade2Data.Price}$")}";
+
                 viewsToUpdatePool.Del(entity);
             }
         }

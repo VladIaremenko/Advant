@@ -12,6 +12,8 @@ namespace Sagra.Assets._Scripts._UI
         public TextMeshProUGUI CurrentLevelText => _currentLevelText;
         public TextMeshProUGUI CurrentIncomeText => _currentIncomeText;
         public TextMeshProUGUI LevelUpButtonText => _levelUpButtonText;
+        public TextMeshProUGUI Upgrade1ButtonText => _upgradeButton1Text;
+        public TextMeshProUGUI Upgrade2ButtonText => _upgradeButton2Text;
         public int ID { get; set; }
 
         [SerializeField] private BuisnessViewModel _buisnessViewModel;
