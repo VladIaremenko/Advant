@@ -38,6 +38,7 @@ namespace Sagra.Assets._Scripts._General
                 data.BasicPrice = soData.BasicPrice;
                 data.CurrentLevel = _storageStates[num].Level;
                 data.IncomeDelay = _dataHolder.BuisnessItems[num].IncomeDelay;
+                data.CurrentIncomeProgress = _storageStates[num].IncomeProgress;
 
                 data.Upgrade1Data.IsBought = _storageStates[num].Upgrades[0];
                 data.Upgrade2Data.IsBought = _storageStates[num].Upgrades[1];

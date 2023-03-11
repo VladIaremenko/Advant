@@ -37,8 +37,10 @@ namespace Sagra.Assets._Scripts._General
                 .Add(new InitViewsSystem(_itemsViews, _balanceText))
                 .Add(new InitBuisnessDataSystem(_storageSO, _buisnessDataItemsHolder))
                 .Add(new InitBalanceDataSystem(_storageSO))
+                .Add(new UpdateIncomeTimerSystem(_storageSO))
                 .Add(new UpdateBuisnessViewsSystem())
                 .Add(new UpdateBalanceViewSystem())
+                .Add(new UpdateIncomeViewSystem())
                 .Init();
         }
 
