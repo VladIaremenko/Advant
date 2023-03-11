@@ -33,29 +33,29 @@ MonoBehaviour:
       Price: 4000
       IncomeIncrease: 200
   - IncomeDelay: 10
-    BasicIncome: 40
-    BasicPrice: 40
+    BasicIncome: 200
+    BasicPrice: 200
     Upgrade1:
-      Price: 1200
+      Price: 6000
       IncomeIncrease: 100
     Upgrade2:
-      Price: 4000
-      IncomeIncrease: 200
+      Price: 20000
+      IncomeIncrease: 150
   - IncomeDelay: 17
-    BasicIncome: 40
-    BasicPrice: 40
+    BasicIncome: 1000
+    BasicPrice: 1000
     Upgrade1:
-      Price: 1200
+      Price: 15000
       IncomeIncrease: 100
     Upgrade2:
-      Price: 4000
+      Price: 50000
       IncomeIncrease: 200
   - IncomeDelay: 30
-    BasicIncome: 40
-    BasicPrice: 40
+    BasicIncome: 5000
+    BasicPrice: 5000
     Upgrade1:
-      Price: 1200
-      IncomeIncrease: 100
-    Upgrade2:
-      Price: 4000
+      Price: 100000
       IncomeIncrease: 200
+    Upgrade2:
+      Price: 500000
+      IncomeIncrease: 400
