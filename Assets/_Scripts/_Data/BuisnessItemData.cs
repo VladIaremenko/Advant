@@ -6,6 +6,7 @@ namespace Sagra.Assets._Scripts._Data
     [Serializable]
     public class BuisnessItemData
     {
+        public float IncomeDelay;
         public float BasicIncome;
         public float BasicPrice;
 

@@ -35,6 +35,8 @@ namespace Sagra.Assets._Scripts._General
                 data.View.Upgrade1ButtonText.text = GetUpgradeButtonText(ref data.Upgrade1Data);
                 data.View.Upgrade2ButtonText.text = GetUpgradeButtonText(ref data.Upgrade2Data);
 
+                data.View.Slider.maxValue = data.IncomeDelay;
+
                 viewsToUpdatePool.Del(entity);
             }
         }

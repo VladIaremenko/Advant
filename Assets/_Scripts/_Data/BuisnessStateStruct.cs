@@ -9,6 +9,8 @@ namespace Sagra.Assets._Scripts._Data
         public string Title;
         public float BasicIncome;
         public float BasicPrice;
+        public float IncomeDelay;
+        public float CurrentIncomeProgress;
         public int CurrentLevel;
         public int Id;
         public UpgradeData Upgrade1Data;

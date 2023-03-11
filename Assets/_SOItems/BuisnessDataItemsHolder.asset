@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TitlesHolderSO: {fileID: 11400000, guid: bb5e5efd1d16556499df41011f114807, type: 2}
   BuisnessItems:
-  - BasicIncome: 3
+  - IncomeDelay: 3
+    BasicIncome: 3
     BasicPrice: 3
     Upgrade1:
       Price: 50
@@ -22,7 +23,8 @@ MonoBehaviour:
     Upgrade2:
       Price: 400
       IncomeIncrease: 100
-  - BasicIncome: 40
+  - IncomeDelay: 6
+    BasicIncome: 40
     BasicPrice: 40
     Upgrade1:
       Price: 1200
@@ -30,7 +32,8 @@ MonoBehaviour:
     Upgrade2:
       Price: 4000
       IncomeIncrease: 200
-  - BasicIncome: 40
+  - IncomeDelay: 10
+    BasicIncome: 40
     BasicPrice: 40
     Upgrade1:
       Price: 1200
@@ -38,7 +41,8 @@ MonoBehaviour:
     Upgrade2:
       Price: 4000
       IncomeIncrease: 200
-  - BasicIncome: 40
+  - IncomeDelay: 17
+    BasicIncome: 40
     BasicPrice: 40
     Upgrade1:
       Price: 1200
@@ -46,7 +50,8 @@ MonoBehaviour:
     Upgrade2:
       Price: 4000
       IncomeIncrease: 200
-  - BasicIncome: 40
+  - IncomeDelay: 30
+    BasicIncome: 40
     BasicPrice: 40
     Upgrade1:
       Price: 1200
