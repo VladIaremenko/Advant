@@ -5,6 +5,7 @@ using Sagra.Assets._Scripts._UserData;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Sagra.Assets._Scripts._General
 {
@@ -51,6 +52,17 @@ namespace Sagra.Assets._Scripts._General
             _systems?.Destroy();
             _systems?.GetWorld()?.Destroy();
             _systems = null;
+        }
+
+        public void Reload()
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        public void Reset()
+        {
+            PlayerPrefs.DeleteAll();
+            SceneManager.LoadScene(0);
         }
     }
 }

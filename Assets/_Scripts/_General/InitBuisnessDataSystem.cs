@@ -38,8 +38,8 @@ namespace Sagra.Assets._Scripts._General
                 data.BasicPrice = soData.BasicPrice;
                 data.CurrentLevel = _storageStates[num].Level;
 
-                data.Upgrade1Data.IsBought = _storageStates[num].Upgrade1Bought;
-                data.Upgrade2Data.IsBought = _storageStates[num].Upgrade2Bought;
+                data.Upgrade1Data.IsBought = _storageStates[num].Upgrades[0];
+                data.Upgrade2Data.IsBought = _storageStates[num].Upgrades[1];
 
                 data.Upgrade1Data.Price = _dataHolder.Items[num].Upgrade1.Price;
                 data.Upgrade2Data.Price = _dataHolder.Items[num].Upgrade2.Price;

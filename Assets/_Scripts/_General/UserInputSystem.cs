@@ -5,7 +5,7 @@ using Sagra.Assets._Scripts._UserData;
 
 namespace Sagra.Assets._Scripts._General
 {
-    public class UserInputSystem : IEcsInitSystem
+    public class UserInputSystem : IEcsInitSystem, IEcsDestroySystem
     {
         private BuisnessViewModel _buisnessViewModel;
         private IEcsSystems _systems;
@@ -24,6 +24,12 @@ namespace Sagra.Assets._Scripts._General
             _systems = systems;
             _buisnessViewModel.OnLevelUpItemClick += HandleLevelUpItemClick;
             _buisnessViewModel.OnUpgradeUpItemClick += HandleUpgradeItemClick;
+        }
+
+        public void Destroy(IEcsSystems systems)
+        {
+            _buisnessViewModel.OnLevelUpItemClick -= HandleLevelUpItemClick;
+            _buisnessViewModel.OnUpgradeUpItemClick -= HandleUpgradeItemClick;
         }
 
         private void HandleUpgradeItemClick(int itemID, int upgradeId)
@@ -60,6 +66,8 @@ namespace Sagra.Assets._Scripts._General
                         _storage.Balance -= upgradeData.Price;
 
                         upgradeData.IsBought = true;
+
+                        _storage.UserDataContainer.BuisnesStates[itemID].Upgrades[upgradeId] = true;
 
                         _storage.UserDataContainer = _storage.UserDataContainer;
 

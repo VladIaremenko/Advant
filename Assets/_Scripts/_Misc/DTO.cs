@@ -16,15 +16,13 @@ namespace Sagra.Assets._Scripts._Misc
     {
         public int Level;
         public float IncomeProgress;
-        public bool Upgrade1Bought;
-        public bool Upgrade2Bought;
+        public List<bool> Upgrades;
 
-        public BuisnessState(int level, float incomeProgress, bool upgrade1Bought = false, bool upgrade2Bought = false)
+        public BuisnessState(int level, float incomeProgress)
         {
             Level = level;
             IncomeProgress = incomeProgress;
-            Upgrade1Bought = upgrade1Bought;
-            Upgrade2Bought = upgrade2Bought;
+            Upgrades = new List<bool>() { false, false };
         }
     }
 }
