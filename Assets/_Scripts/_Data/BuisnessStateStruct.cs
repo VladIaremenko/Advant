@@ -30,6 +30,7 @@ namespace Sagra.Assets._Scripts._Data
 
     public struct UpgradeData
     {
+        public string Title;
         public float Price;
         public float IncomeMultiplier;
         public bool IsBought;

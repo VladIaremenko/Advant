@@ -41,7 +41,7 @@ namespace Sagra.Assets._Scripts._General
 
         private string GetUpgradeButtonText(ref UpgradeData data)
         {
-            return $"Title\nIncome: +{data.IncomeMultiplier}%\n" +
+            return $"{data.Title}\nIncome: +{data.IncomeMultiplier}%\n" +
                     $"{(data.IsBought ? "Purchased" : $"Price: {data.Price}$")}";
         }
     }

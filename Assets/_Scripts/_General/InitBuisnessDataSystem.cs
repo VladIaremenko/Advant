@@ -31,9 +31,9 @@ namespace Sagra.Assets._Scripts._General
 
                 viewsToUpdatePool.Add(entity);
 
-                var soData = _dataHolder.Items[num];
+                var soData = _dataHolder.BuisnessItems[num];
 
-                data.Title = soData.Title;
+                data.Title = _dataHolder.TitlesHolderSO.Titles[num].BuisnessTitle;
                 data.BasicIncome = soData.BasicIncome;
                 data.BasicPrice = soData.BasicPrice;
                 data.CurrentLevel = _storageStates[num].Level;
@@ -41,11 +41,14 @@ namespace Sagra.Assets._Scripts._General
                 data.Upgrade1Data.IsBought = _storageStates[num].Upgrades[0];
                 data.Upgrade2Data.IsBought = _storageStates[num].Upgrades[1];
 
-                data.Upgrade1Data.Price = _dataHolder.Items[num].Upgrade1.Price;
-                data.Upgrade2Data.Price = _dataHolder.Items[num].Upgrade2.Price;
+                data.Upgrade1Data.Title = _dataHolder.TitlesHolderSO.Titles[num].Upgrade1Title;
+                data.Upgrade2Data.Title = _dataHolder.TitlesHolderSO.Titles[num].Upgrade2Title;
 
-                data.Upgrade1Data.IncomeMultiplier = _dataHolder.Items[num].Upgrade1.IncomeIncrease;
-                data.Upgrade2Data.IncomeMultiplier = _dataHolder.Items[num].Upgrade2.IncomeIncrease;
+                data.Upgrade1Data.Price = _dataHolder.BuisnessItems[num].Upgrade1.Price;
+                data.Upgrade2Data.Price = _dataHolder.BuisnessItems[num].Upgrade2.Price;
+
+                data.Upgrade1Data.IncomeMultiplier = _dataHolder.BuisnessItems[num].Upgrade1.IncomeIncrease;
+                data.Upgrade2Data.IncomeMultiplier = _dataHolder.BuisnessItems[num].Upgrade2.IncomeIncrease;
 
                 data.Id = num;
                 data.View.ID = num;

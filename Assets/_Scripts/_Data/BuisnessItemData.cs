@@ -3,10 +3,9 @@ using UnityEngine;
 
 namespace Sagra.Assets._Scripts._Data
 {
-    [CreateAssetMenu(fileName = "BuisnessItemDataSO", menuName = "SO/Data/BuisnessItemDataSO", order = 1)]
-    public class BuisnessItemDataSO : ScriptableObject
+    [Serializable]
+    public class BuisnessItemData
     {
-        public string Title;
         public float BasicIncome;
         public float BasicPrice;
 
