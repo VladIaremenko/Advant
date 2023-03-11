@@ -1,8 +1,6 @@
 ﻿using Leopotam.EcsLite;
 using Sagra.Assets._Scripts._Data;
 using Sagra.Assets._Scripts._UserData;
-using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
 
 namespace Sagra.Assets._Scripts._General
 {
@@ -23,7 +21,7 @@ namespace Sagra.Assets._Scripts._General
             var filter = world.Filter<BuisnessStateStruct>().End();
             var allData = world.GetPool<BuisnessStateStruct>();
             var viewsToUpdatePool = world.GetPool<ViewsToUpdate>();
-            var states = _storage.UserDataContainer.BuisnesStates;
+            var _storageStates = _storage.UserDataContainer.BuisnesStates;
 
             int num = 0;
 
@@ -38,7 +36,17 @@ namespace Sagra.Assets._Scripts._General
                 data.Title = soData.Title;
                 data.BasicIncome = soData.BasicIncome;
                 data.BasicPrice = soData.BasicPrice;
-                data.CurrentLevel = states[num].Level;
+                data.CurrentLevel = _storageStates[num].Level;
+
+                data.Upgrade1Bought = _storageStates[num].Upgrade1Bought;
+                data.Upgrade2Bought = _storageStates[num].Upgrade2Bought;
+
+                data.Upgrade1Data.Price = _dataHolder.Items[num].Upgrade1.Price;
+                data.Upgrade2Data.Price = _dataHolder.Items[num].Upgrade2.Price;
+
+                data.Upgrade1Data.IncomeMultiplier = _dataHolder.Items[num].Upgrade1.IncomeIncrease;
+                data.Upgrade2Data.IncomeMultiplier = _dataHolder.Items[num].Upgrade2.IncomeIncrease;
+
                 data.Id = num;
                 data.View.ID = num;
 

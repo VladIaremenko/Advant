@@ -2,8 +2,6 @@
 using Sagra.Assets._Scripts._Data;
 using Sagra.Assets._Scripts._Misc;
 using Sagra.Assets._Scripts._UserData;
-using Unity.VisualScripting;
-using UnityEngine;
 
 namespace Sagra.Assets._Scripts._General
 {
@@ -24,10 +22,11 @@ namespace Sagra.Assets._Scripts._General
         public void Init(IEcsSystems systems)
         {
             _systems = systems;
-            _buisnessViewModel.OnUpgradeItemCliked += HandleUpgeadeItemClick;
+            _buisnessViewModel.OnLevelUpItemClick += HandleLevelUpItemClick;
+            _buisnessViewModel.OnUpgradeUpItemClick += HandleUpgradeItemClick;
         }
 
-        private void HandleUpgeadeItemClick(int id)
+        private void HandleUpgradeItemClick(int itemID, int upgradeId)
         {
             var world = _systems.GetWorld();
             var filter = world.Filter<BuisnessStateStruct>().End();
@@ -42,11 +41,66 @@ namespace Sagra.Assets._Scripts._General
             {
                 ref var data = ref allData.Get(entity);
 
-                if(data.Id == id)
+                if (data.Id == itemID)
+                {
+                    ref var upgradeData = ref data.Upgrade1Data;
+
+                    if (upgradeId == 1)
+                    {
+                        upgradeData = ref data.Upgrade2Data;
+                    }
+
+                    if (_storage.Balance - upgradeData.Price >= 0)
+                    {
+                        _storage.Balance -= upgradeData.Price;
+
+                        if (upgradeId == 0)
+                        {
+                            data.Upgrade1Bought = true;
+                        }
+
+                        if (upgradeId == 1)
+                        {
+                            data.Upgrade2Bought = true;
+                        }
+
+                        _storage.UserDataContainer = _storage.UserDataContainer;
+
+                        viewsToUpdatePool.Add(entity);
+
+                        foreach (var entityBalance in filterBalance)
+                        {
+                            ref var dataBalance = ref allDataBalance.Get(entityBalance);
+
+                            dataBalance.BalanceAmount = _storage.Balance;
+
+                            viewsToUpdatePool.Add(entityBalance);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void HandleLevelUpItemClick(int id)
+        {
+            var world = _systems.GetWorld();
+            var filter = world.Filter<BuisnessStateStruct>().End();
+            var allData = world.GetPool<BuisnessStateStruct>();
+            var viewsToUpdatePool = world.GetPool<ViewsToUpdate>();
+            var states = _storage.UserDataContainer.BuisnesStates;
+
+            var filterBalance = world.Filter<BalanceStateStruct>().End();
+            var allDataBalance = world.GetPool<BalanceStateStruct>();
+
+            foreach (var entity in filter)
+            {
+                ref var data = ref allData.Get(entity);
+
+                if (data.Id == id)
                 {
                     var upgradePrice = BuisnessCalculator.CalculateUpdgradePrice(data.CurrentLevel, data.BasicPrice);
 
-                    if(_storage.Balance - upgradePrice >= 0)
+                    if (_storage.Balance - upgradePrice >= 0)
                     {
                         _storage.Balance -= upgradePrice;
                         _storage.UserDataContainer.BuisnesStates[id].Level++;

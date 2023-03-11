@@ -6,11 +6,17 @@ namespace Sagra.Assets._Scripts._Data
     [CreateAssetMenu(fileName = "BuisnessViewModel", menuName = "SO/Data/BuisnessViewModel", order = 1)]
     public class BuisnessViewModel : ScriptableObject
     {
-        public event Action<int> OnUpgradeItemCliked = new(x => { });
+        public event Action<int> OnLevelUpItemClick = new(x => { });
+        public event Action<int, int> OnUpgradeUpItemClick = new((x,y) => { });
 
-        public void HandleUpgradeItemClicked(int id)
+        public void HandleLevelUpItemClick(int id)
         {
-            OnUpgradeItemCliked(id);
+            OnLevelUpItemClick(id);
+        }
+
+        public void HandleUpgradeItemClick(int itemId, int upgradeId)
+        {
+            OnUpgradeUpItemClick.Invoke(itemId, upgradeId);
         }
     }
 }

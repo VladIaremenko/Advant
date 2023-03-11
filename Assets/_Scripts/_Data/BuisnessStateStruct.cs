@@ -10,9 +10,11 @@ namespace Sagra.Assets._Scripts._Data
         public float BasicIncome;
         public float BasicPrice;
         public int CurrentLevel;
-        public float Upgrade1Multiplier;
-        public float Upgrade2Multiplier;
         public int Id;
+        public bool Upgrade1Bought;
+        public bool Upgrade2Bought;
+        public UpgradeData Upgrade1Data;
+        public UpgradeData Upgrade2Data;
 
         public BuisnessItemView View;
     }
@@ -26,6 +28,12 @@ namespace Sagra.Assets._Scripts._Data
     public struct ViewsToUpdate
     {
 
+    }
+
+    public struct UpgradeData
+    {
+        public float Price;
+        public float IncomeMultiplier;
     }
 }
 

@@ -24,16 +24,32 @@ namespace Sagra.Assets._Scripts._UI
         [SerializeField] private TextMeshProUGUI _levelUpButtonText;
         [SerializeField] private TextMeshProUGUI _upgradeButton1Text;
         [SerializeField] private TextMeshProUGUI _upgradeButton2Text;
-        [SerializeField] private Button _upgradeButton;
+
+        [Header("Buttons")]
+        [SerializeField] private Button _levelUpButton;
+        [SerializeField] private Button _upgrade1Button;
+        [SerializeField] private Button _upgrade2Button;
 
         private void Awake()
         {
-            _upgradeButton.onClick.AddListener(HandleUpgradeButtonClick);
+            _levelUpButton.onClick.AddListener(HandleUpgradeButtonClick);
+            _upgrade1Button.onClick.AddListener(HandleUpgrade1Clicked);
+            _upgrade2Button.onClick.AddListener(HandleUpgrade2Clicked);
+        }
+
+        private void HandleUpgrade1Clicked()
+        {
+            _buisnessViewModel.HandleUpgradeItemClick(ID, 0);
+        }
+
+        private void HandleUpgrade2Clicked()
+        {
+            _buisnessViewModel.HandleUpgradeItemClick(ID, 1);
         }
 
         private void HandleUpgradeButtonClick()
         {
-            _buisnessViewModel.HandleUpgradeItemClicked(ID);
+            _buisnessViewModel.HandleLevelUpItemClick(ID);
         }
     }
 }

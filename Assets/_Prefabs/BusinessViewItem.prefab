@@ -763,7 +763,9 @@ MonoBehaviour:
   _levelUpButtonText: {fileID: 526885151197002098}
   _upgradeButton1Text: {fileID: 526885150241805134}
   _upgradeButton2Text: {fileID: 526885150409523210}
-  _upgradeButton: {fileID: 526885149693414509}
+  _levelUpButton: {fileID: 526885149693414509}
+  _upgrade1Button: {fileID: 526885150399308992}
+  _upgrade2Button: {fileID: 526885150223268439}
 --- !u!1 &526885150223268459
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,10 +801,10 @@ RectTransform:
   m_Father: {fileID: 526885150417314622}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 450, y: -60}
-  m_SizeDelta: {x: 300, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &526885150223268436
 CanvasRenderer:
@@ -1056,10 +1058,10 @@ RectTransform:
   m_Father: {fileID: 526885150417314622}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -60}
-  m_SizeDelta: {x: 300, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &526885150399308993
 CanvasRenderer:
@@ -1295,7 +1297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &526885150417314622
 RectTransform:
   m_ObjectHideFlags: 0

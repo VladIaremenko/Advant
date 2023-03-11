@@ -1,6 +1,4 @@
-﻿using Assets._Scripts._Puzzle;
-using Coin.Assets._Scripts._Puzzle;
-using Leopotam.EcsLite;
+﻿using Leopotam.EcsLite;
 using Sagra.Assets._Scripts._Data;
 using Sagra.Assets._Scripts._UI;
 using Sagra.Assets._Scripts._UserData;
