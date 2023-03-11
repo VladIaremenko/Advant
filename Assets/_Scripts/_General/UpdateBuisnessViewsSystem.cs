@@ -19,8 +19,8 @@ namespace Sagra.Assets._Scripts._General
 
                 var income = BuisnessCalculator
                     .CalculateIncome(data.CurrentLevel, data.BasicIncome,
-                    data.Upgrade1Bought ? data.Upgrade1Data.IncomeMultiplier : 0,
-                    data.Upgrade2Bought ? data.Upgrade2Data.IncomeMultiplier : 0);
+                    data.Upgrade1Data.IsBought ? data.Upgrade1Data.IncomeMultiplier : 0,
+                    data.Upgrade2Data.IsBought ? data.Upgrade2Data.IncomeMultiplier : 0);
 
                 var upgradePrice = BuisnessCalculator
                     .CalculateUpdgradePrice(data.CurrentLevel, data.BasicPrice);
@@ -32,14 +32,17 @@ namespace Sagra.Assets._Scripts._General
 
                 data.View.LevelUpButtonText.text = $"LEVEL UP\nPrice: {upgradePrice}$";
 
-                data.View.Upgrade1ButtonText.text = $"Title\n{data.Upgrade1Data.IncomeMultiplier}\n" +
-                    $"{(data.Upgrade1Bought ? "Purchased" : $"Price: {data.Upgrade1Data.Price}$")}";
-
-                data.View.Upgrade2ButtonText.text = $"Title\n{data.Upgrade2Data.IncomeMultiplier}\n" +
-                    $"{(data.Upgrade2Bought ? "Purchased" : $"Price: {data.Upgrade2Data.Price}$")}";
+                data.View.Upgrade1ButtonText.text = GetUpgradeButtonText(ref data.Upgrade1Data);
+                data.View.Upgrade2ButtonText.text = GetUpgradeButtonText(ref data.Upgrade2Data);
 
                 viewsToUpdatePool.Del(entity);
             }
+        }
+
+        private string GetUpgradeButtonText(ref UpgradeData data)
+        {
+            return $"Title\nIncome: +{data.IncomeMultiplier}%\n" +
+                    $"{(data.IsBought ? "Purchased" : $"Price: {data.Price}$")}";
         }
     }
 }

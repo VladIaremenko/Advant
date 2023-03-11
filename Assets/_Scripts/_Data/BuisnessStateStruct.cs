@@ -11,8 +11,6 @@ namespace Sagra.Assets._Scripts._Data
         public float BasicPrice;
         public int CurrentLevel;
         public int Id;
-        public bool Upgrade1Bought;
-        public bool Upgrade2Bought;
         public UpgradeData Upgrade1Data;
         public UpgradeData Upgrade2Data;
 
@@ -34,6 +32,7 @@ namespace Sagra.Assets._Scripts._Data
     {
         public float Price;
         public float IncomeMultiplier;
+        public bool IsBought;
     }
 }
 

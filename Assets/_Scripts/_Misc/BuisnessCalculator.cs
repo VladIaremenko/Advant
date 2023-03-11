@@ -9,7 +9,7 @@
 
         public static float CalculateIncome(int level, float basicIncome, float upgrade1Multiplier, float upgrade2Multiplier)
         {
-            return level * basicIncome * (1 + upgrade1Multiplier + upgrade2Multiplier);
+            return level * basicIncome * (1 + upgrade1Multiplier/100f + upgrade2Multiplier/100f);
         }
     }
 }

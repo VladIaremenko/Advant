@@ -50,19 +50,16 @@ namespace Sagra.Assets._Scripts._General
                         upgradeData = ref data.Upgrade2Data;
                     }
 
+                    if (upgradeData.IsBought)
+                    {
+                        return;
+                    }
+
                     if (_storage.Balance - upgradeData.Price >= 0)
                     {
                         _storage.Balance -= upgradeData.Price;
 
-                        if (upgradeId == 0)
-                        {
-                            data.Upgrade1Bought = true;
-                        }
-
-                        if (upgradeId == 1)
-                        {
-                            data.Upgrade2Bought = true;
-                        }
+                        upgradeData.IsBought = true;
 
                         _storage.UserDataContainer = _storage.UserDataContainer;
 
