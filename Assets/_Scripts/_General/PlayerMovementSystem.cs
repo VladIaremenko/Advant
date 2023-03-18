@@ -1,4 +1,5 @@
-﻿using Leopotam.EcsLite;
+﻿using DG.Tweening;
+using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
 using Sagra.Assets._Scripts._Components;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace Sagra.Assets._Scripts._General
 {
     public class PlayerMovementSystem : IEcsRunSystem
     {
-        readonly EcsFilterInject<Inc<PlayerControlledComponent>> _movingUnits = default;
+        readonly EcsFilterInject<Inc<PlayerControlledComponent, InputCommandComponent>> _movingUnits = default;
 
         readonly EcsPoolInject<UnitStateComponent> _unitStatePool = default;
         readonly EcsPoolInject<InputCommandComponent> _commandPool = default;
@@ -25,18 +26,17 @@ namespace Sagra.Assets._Scripts._General
 
                 var newPosition = Mathf.Clamp(state.PositionIndex + command.Direction, 0, anchors.Anchors.Length);
 
+                Debug.Log(1);
+
                 if(newPosition != state.PositionIndex)
                 {
-
+                    Debug.Log(2);
+                    state.PositionIndex = newPosition;
+                    tranfsorm.Transform.DOMove(anchors.Anchors[newPosition].position, 0.5f);
                 }
 
                 _commandPool.Value.Del(entity);
             }
-        }
-
-        private void HandleMoveDirection(ref Vector3 direction, ref TranformAnchorsHolderComponent anchors, Transform transform)
-        {
-
         }
     }
 }
