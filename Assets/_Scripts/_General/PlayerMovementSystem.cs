@@ -28,7 +28,6 @@ namespace Sagra.Assets._Scripts._General
 
                 if (state.NextPositionIndex != state.CurrentPositionIndex)
                 {
-                    state.MovingState = MovingState.Moving;
                     state.CurrentPositionIndex = state.NextPositionIndex;
 
                     tranfsorm.Transform.DOKill();

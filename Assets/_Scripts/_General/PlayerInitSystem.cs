@@ -17,7 +17,6 @@ namespace Sagra.Assets._Scripts._General
                 ref var unit = ref _unitStates.Value.Add(entity);
 
                 unit.CurrentPositionIndex = 1;
-                unit.MovingState = MovingState.Idle;
             }
         }
     }
