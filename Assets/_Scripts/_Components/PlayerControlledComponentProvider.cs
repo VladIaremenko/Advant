@@ -7,11 +7,6 @@ namespace Sagra.Assets._Scripts._Components
 {
     public sealed class PlayerControlledComponentProvider : MonoProvider<PlayerControlledComponent>
     {
-        public override void Convert(int entity, EcsWorld world)
-        {
-            Debug.Log("Gamer");
-            base.Convert(entity, world);
-        }
     }
 
     [Serializable]

@@ -24,15 +24,17 @@ namespace Sagra.Assets._Scripts._General
                 ref var anchors = ref _anchorsPool.Value.Get(entity);
                 ref var state = ref _unitStatePool.Value.Get(entity);
 
-                var newPosition = Mathf.Clamp(state.PositionIndex + command.Direction, 0, anchors.Anchors.Length);
+                state.NextPositionIndex = Mathf.Clamp(state.CurrentPositionIndex + command.Direction, 0, anchors.Anchors.Length - 1);
 
-                Debug.Log(1);
-
-                if(newPosition != state.PositionIndex)
+                if (state.NextPositionIndex != state.CurrentPositionIndex)
                 {
-                    Debug.Log(2);
-                    state.PositionIndex = newPosition;
-                    tranfsorm.Transform.DOMove(anchors.Anchors[newPosition].position, 0.5f);
+                    state.MovingState = MovingState.Moving;
+                    state.CurrentPositionIndex = state.NextPositionIndex;
+
+                    Debug.Log(state.NextPositionIndex);
+
+                    tranfsorm.Transform.DOKill();
+                    tranfsorm.Transform.DOMove(anchors.Anchors[state.NextPositionIndex].position, 1f);
                 }
 
                 _commandPool.Value.Del(entity);

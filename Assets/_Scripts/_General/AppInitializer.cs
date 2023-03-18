@@ -9,12 +9,14 @@ namespace Sagra.Assets._Scripts._General
     {
         EcsSystems _systems;
 
-        void Awake()
+        void Start()
         {
             var world = new EcsWorld();
             _systems = new EcsSystems(world);
 
             WorldHolder.EcsWorld = world;
+
+            GameBus.ConverEntitiesEvent.Invoke();
 
             _systems
 #if UNITY_EDITOR
