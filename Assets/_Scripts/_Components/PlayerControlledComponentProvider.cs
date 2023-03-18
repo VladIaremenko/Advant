@@ -7,10 +7,7 @@ namespace Sagra.Assets._Scripts._Components
     public sealed class PlayerControlledComponentProvider : MonoProvider<PlayerControlledComponent> { }
 
     [Serializable]
-    public struct PlayerControlledComponent
-    {
-
-    }
+    public struct PlayerControlledComponent{}
 }
 
 

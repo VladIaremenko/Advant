@@ -13,8 +13,8 @@ namespace Sagra.Assets._Scripts._Misc
             var pool = world.GetPool<T>();
             world.GetPool<T>().Add(entity);
 
-            ref var hitComponent = ref pool.Get(entity);
-            hitComponent = value;
+            ref var component = ref pool.Get(entity);
+            component = value;
         }
     }
 }
