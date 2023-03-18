@@ -1,7 +1,6 @@
 ﻿using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
 using Sagra.Assets._Scripts._Components;
-using UnityEngine;
 
 namespace Sagra.Assets._Scripts._General
 {
@@ -18,7 +17,7 @@ namespace Sagra.Assets._Scripts._General
 
                 ref var unit = ref _unitStates.Value.Get(entity);
 
-                unit.PositionState = PositionState.Center;
+                unit.PositionIndex = 0;
                 unit.MovingState = MovingState.Idle;
             }
         }
