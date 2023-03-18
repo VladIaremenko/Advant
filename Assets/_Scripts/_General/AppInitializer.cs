@@ -1,46 +1,27 @@
 ﻿using Leopotam.EcsLite;
-using Sagra.Assets._Scripts._Data;
-using Sagra.Assets._Scripts._UI;
-using Sagra.Assets._Scripts._UserData;
-using System.Collections.Generic;
-using TMPro;
+using Leopotam.EcsLite.Di;
+using Sagra.Assets._Scripts._Misc;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Sagra.Assets._Scripts._General
 {
     public class AppInitializer : MonoBehaviour
     {
-        [SerializeField] private BuisnessViewModel _buisnessViewModel;
-        [SerializeField] private BuisnessDataItemsHolder _buisnessDataItemsHolder;
-        [SerializeField] private StorageSO _storageSO;
-        [SerializeField] private TextMeshProUGUI _balanceText;
-        [SerializeField] private List<BuisnessItemView> _itemsViews;
+        EcsSystems _systems;
 
-        private EcsSystems _systems;
-        private EcsWorld _ecsWorld;
-
-        private void Awake()
+        void Awake()
         {
-            Application.targetFrameRate = 60;
-        }
+            var world = new EcsWorld();
+            _systems = new EcsSystems(world);
 
-        void Start()
-        {
-            _storageSO.Init();
-
-            _ecsWorld = new EcsWorld();
-            _systems = new EcsSystems(_ecsWorld);
+            WorldHolder.EcsWorld = world;
 
             _systems
-                .Add(new UserInputSystem())
-                .Add(new InitViewsSystem(_itemsViews, _balanceText))
-                .Add(new InitBuisnessDataSystem(_storageSO, _buisnessDataItemsHolder))
-                .Add(new InitBalanceDataSystem(_storageSO))
-                .Add(new UpdateIncomeTimerSystem(_storageSO))
-                .Add(new UpdateBuisnessViewsSystem())
-                .Add(new UpdateBalanceViewSystem())
-                .Add(new UpdateIncomeViewSystem())
+#if UNITY_EDITOR
+                .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
+                .Add(new PlayerMovementSystem())
+#endif
+                .Inject()
                 .Init();
         }
 
@@ -55,18 +36,8 @@ namespace Sagra.Assets._Scripts._General
             _systems?.GetWorld()?.Destroy();
             _systems = null;
         }
-
-        public void Reload()
-        {
-            SceneManager.LoadScene(0);
-        }
-
-        public void Reset()
-        {
-            PlayerPrefs.DeleteAll();
-            SceneManager.LoadScene(0);
-        }
     }
 }
+
 
 
