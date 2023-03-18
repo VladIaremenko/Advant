@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace Sagra.Assets._Scripts._Fly._Components
+namespace Sagra.Assets._Scripts._Components
 {
     public sealed class TranfsormComponentProvider : MonoProvider<TranfsormComponent>{}
 
