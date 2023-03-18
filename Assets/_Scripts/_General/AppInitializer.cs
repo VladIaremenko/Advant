@@ -22,6 +22,7 @@ namespace Sagra.Assets._Scripts._General
 #if UNITY_EDITOR
                 .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
 #endif
+                .Add(new BackgroundSystem())
                 .Add(new PlayerInitSystem())
                 .Add(new PlayerInputSystem())
                 .Add(new PlayerMovementSystem())

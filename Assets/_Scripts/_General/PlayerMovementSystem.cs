@@ -31,8 +31,6 @@ namespace Sagra.Assets._Scripts._General
                     state.MovingState = MovingState.Moving;
                     state.CurrentPositionIndex = state.NextPositionIndex;
 
-                    Debug.Log(state.NextPositionIndex);
-
                     tranfsorm.Transform.DOKill();
                     tranfsorm.Transform.DOMove(anchors.Anchors[state.NextPositionIndex].position, 1f);
                 }
