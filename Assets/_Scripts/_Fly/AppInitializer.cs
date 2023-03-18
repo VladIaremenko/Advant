@@ -1,5 +1,6 @@
 ﻿using Leopotam.EcsLite;
 using Sagra.Assets._Scripts._Data;
+using Sagra.Assets._Scripts._General;
 using Sagra.Assets._Scripts._UI;
 using Sagra.Assets._Scripts._UserData;
 using System.Collections.Generic;
@@ -7,13 +8,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Sagra.Assets._Scripts._General
+namespace Sagra.Assets._Scripts._Fly
 {
     public class AppInitializer : MonoBehaviour
     {
-        [SerializeField] private BuisnessViewModel _buisnessViewModel;
-        [SerializeField] private BuisnessDataItemsHolder _buisnessDataItemsHolder;
-        [SerializeField] private StorageSO _storageSO;
         [SerializeField] private TextMeshProUGUI _balanceText;
         [SerializeField] private List<BuisnessItemView> _itemsViews;
 
@@ -27,20 +25,11 @@ namespace Sagra.Assets._Scripts._General
 
         void Start()
         {
-            _storageSO.Init();
-
             _ecsWorld = new EcsWorld();
             _systems = new EcsSystems(_ecsWorld);
 
             _systems
                 .Add(new UserInputSystem())
-                .Add(new InitViewsSystem(_itemsViews, _balanceText))
-                .Add(new InitBuisnessDataSystem(_storageSO, _buisnessDataItemsHolder))
-                .Add(new InitBalanceDataSystem(_storageSO))
-                .Add(new UpdateIncomeTimerSystem(_storageSO))
-                .Add(new UpdateBuisnessViewsSystem())
-                .Add(new UpdateBalanceViewSystem())
-                .Add(new UpdateIncomeViewSystem())
                 .Init();
         }
 

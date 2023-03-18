@@ -45,28 +45,6 @@ namespace Sagra.Assets._Scripts._General
                 {
                     _storageSO.UserDataContainer.BuisnesStates[data.Id].IncomeProgress = data.CurrentIncomeProgress;
                 }
-
-                if (data.CurrentIncomeProgress >= data.IncomeDelay)
-                {
-                    data.CurrentIncomeProgress = 0;
-
-                    foreach (var entityBalance in filterBalance)
-                    {
-                        ref var dataBalance = ref allDataBalance.Get(entityBalance);
-
-                        dataBalance.BalanceAmount += BuisnessCalculator
-                        .CalculateIncome(data.CurrentLevel, data.BasicIncome,
-                        data.Upgrade1Data.IsBought ? data.Upgrade1Data.IncomeMultiplier : 0,
-                        data.Upgrade2Data.IsBought ? data.Upgrade2Data.IncomeMultiplier : 0);
-
-                        _storageSO.Balance = dataBalance.BalanceAmount;
-
-                        if (!viewsToUpdatePool.Has(entityBalance))
-                        {
-                            viewsToUpdatePool.Add(entityBalance);
-                        }
-                    }
-                }
             }
 
             //Save income progress every 30 frames
