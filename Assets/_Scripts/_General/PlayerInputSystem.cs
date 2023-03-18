@@ -32,7 +32,7 @@ namespace Sagra.Assets._Scripts._General
                 _endPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
                 if (_endTime - _startTime >= _swipeTimeTreshold
-                || Vector2.Distance(_startPosition, _endPosition) <= _swipeDistanceTreshold)
+                || Mathf.Abs(_startPosition.x - _endPosition.x) <= _swipeDistanceTreshold)
                 {
                     return;
                 }
@@ -42,7 +42,7 @@ namespace Sagra.Assets._Scripts._General
                     _commandPool.Value.Add(entity);
 
                     ref var component = ref _commandPool.Value.Get(entity);
-                    component.Direction = (_startPosition - _endPosition).normalized;
+                    component.Direction = (_startPosition.x - _endPosition.x) >= 0 ? -1 : 1;
                 }
             }
         }
