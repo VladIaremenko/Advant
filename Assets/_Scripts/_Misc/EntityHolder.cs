@@ -23,8 +23,6 @@ namespace Sagra.Assets._Scripts._Misc
             _entity = _world.NewEntity();
 
             _monoProviders.ForEach(x => { x.Convert(_entity, _world);});
-
-            Debug.Log(_monoProviders.Count);
         }
     }
 }
