@@ -37,6 +37,7 @@ namespace Sagra.Assets._Scripts._General
                 .Add(new ObstaclesSpawnSystem())
                 .Add(new ObstaclesMovingSystem())
                 .Add(new ObstaclesCollisionSystem())
+                .Add(new PlayerStateCheckSystem())
                 .DelHere<TriggerComponent>()
                 .Inject(_spawnerSO)
                 .Init();

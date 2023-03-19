@@ -4,6 +4,7 @@
     {
         public int CurrentPositionIndex;
         public int NextPositionIndex;
+        public bool IsDead;
     }
 }
 
