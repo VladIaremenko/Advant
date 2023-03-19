@@ -14,7 +14,9 @@ namespace Sagra.Assets._Scripts._Config
         [Range(0.1f, 10)]
         public float ObstacleSpeed;
         [Range(0.1f, 10)]
-        internal float PlayerChangeLaneTime;
+        public float PlayerChangeLaneTime;
+        [Range(0.1f, 10)]
+        public float TimeBeforeReload = 3;
 
         public bool CreateNewEntity { get; set; }
 
@@ -25,6 +27,8 @@ namespace Sagra.Assets._Scripts._Config
         public float EndTime { get; set; }
         public float SwipeTimeTreshold { get; set; } = 1f;
         public float SwipeDistanceTreshold { get; set; } = 0.2f;
+        public bool GameIsOver { get; set; } = false;
+        public float TimeAfterReloadCount { get; set; } = 0;
     }
 }
 

@@ -12,28 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7d2815aed55c044a0c721d32271cde, type: 3}
   m_Name: ObstaclesSpawnerSO
   m_EditorClassIdentifier: 
-  TimeSinceLastSpawn: 0.028524801
+  TimeSinceLastSpawn: 0.0116441
   ObstaclesParent: {fileID: 0}
-  TimeBetweenSpawns: 0.1
+  TimeBetweenSpawns: 3
   Items:
   - {fileID: 7272188727662437721, guid: b1fadc2583e62894e8a2dd223dbc5697, type: 3}
   - {fileID: 7272188727662437721, guid: 631a42a3862fe98409f051dfedc5b342, type: 3}
   CreatedItems:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

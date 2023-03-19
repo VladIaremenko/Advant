@@ -1,6 +1,7 @@
 ﻿using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
 using Sagra.Assets._Scripts._Components;
+using Sagra.Assets._Scripts._Config;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,18 +11,15 @@ namespace Sagra.Assets._Scripts._General
     {
         readonly EcsFilterInject<Inc<PlayerControlledComponent>> _playerUnits = default;
         readonly EcsPoolInject<UnitStateComponent> _unitStates = default;
-
-        private bool _gameIsOver = false;
-        private float _timeAfterReloadCount = 0;
-        private float _timeBeforeReload = 3;
+        readonly EcsCustomInject<GameConfigSO> _config = default;
 
         public void Run(IEcsSystems systems)
         {
-            if (_gameIsOver)
+            if (_config.Value.GameIsOver)
             {
-                _timeAfterReloadCount += Time.deltaTime;
+                _config.Value.TimeAfterReloadCount += Time.deltaTime;
 
-                if(_timeAfterReloadCount >= _timeBeforeReload)
+                if(_config.Value.TimeAfterReloadCount >= _config.Value.TimeBeforeReload)
                 {
                     SceneManager.LoadScene(0);
                 }
@@ -35,7 +33,7 @@ namespace Sagra.Assets._Scripts._General
 
                 if (unit.IsDead)
                 {
-                    _gameIsOver = true;
+                    _config.Value.GameIsOver = true;
                     return;
                 }
             }

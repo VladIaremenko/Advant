@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4d04f68be9e5a4599e71540d56a352, type: 3}
   m_Name: GameConfigSO
   m_EditorClassIdentifier: 
-  TimeElapsed: 3.1357424
-  ScrollSpeed: 2
+  BackgroundScrollSpeed: 1
+  YBottomDistanceBeforeReset: -10
+  ObstacleSpeed: 3
+  PlayerChangeLaneTime: 1
