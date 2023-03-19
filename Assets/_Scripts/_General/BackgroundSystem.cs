@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Sagra.Assets._Scripts._General
 {
-    public class BackgroundSystem : IEcsInitSystem,IEcsRunSystem
+    public class BackgroundSystem : IEcsInitSystem, IEcsRunSystem
     {
         readonly EcsFilterInject<Inc<SpriteRendererComponent>> _units = default;
         readonly EcsCustomInject<GameConfigSO> _config = default;
@@ -19,7 +19,7 @@ namespace Sagra.Assets._Scripts._General
             {
                 ref var unit = ref _units.Pools.Inc1.Get(entity);
 
-                unit.SpriteRenderer.material.SetTextureOffset("_MainTex",
+                unit.SpriteRenderer.material.SetTextureOffset(_config.Value.ParameterName,
                     new Vector2(0, 0));
             }
         }
@@ -32,7 +32,7 @@ namespace Sagra.Assets._Scripts._General
             {
                 ref var unit = ref _units.Pools.Inc1.Get(entity);
 
-                unit.SpriteRenderer.material.SetTextureOffset("_MainTex", 
+                unit.SpriteRenderer.material.SetTextureOffset(_config.Value.ParameterName,
                     new Vector2(0, _config.Value.TimeElapsed * _config.Value.BackgroundScrollSpeed / 100));
             }
         }

@@ -1,6 +1,7 @@
 ﻿using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
 using Sagra.Assets._Scripts._Components;
+using Sagra.Assets._Scripts._Config;
 using UnityEngine;
 
 namespace Sagra.Assets._Scripts._General
@@ -9,30 +10,24 @@ namespace Sagra.Assets._Scripts._General
     {
         readonly EcsPoolInject<InputCommandComponent> _commandPool = default;
         readonly EcsFilterInject<Inc<TranfsormComponent, PlayerControlledComponent>> _movingUnits = default;
-
-        private Vector2 _startPosition;
-        private Vector2 _endPosition;
-        private float _startTime;
-        private float _endTime;
-
-        private float _swipeTimeTreshold = 1f;
-        private float _swipeDistanceTreshold = 0.2f;
+        readonly EcsCustomInject<GameConfigSO> _config = default;
+        readonly EcsCustomInject<Camera> _camera = default;
 
         public void Run(IEcsSystems systems)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                _startTime = Time.time;
-                _startPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+                _config.Value.StartTime = Time.time;
+                _config.Value.StartPosition = _camera.Value.ScreenToViewportPoint(Input.mousePosition);
             }
 
             if (Input.GetMouseButtonUp(0))
             {
-                _endTime = Time.time;
-                _endPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+                _config.Value.EndTime = Time.time;
+                _config.Value.EndPosition = _camera.Value.ScreenToViewportPoint(Input.mousePosition);
 
-                if (_endTime - _startTime >= _swipeTimeTreshold
-                || Mathf.Abs(_startPosition.x - _endPosition.x) <= _swipeDistanceTreshold)
+                if (_config.Value.EndTime - _config.Value.StartTime >= _config.Value.SwipeTimeTreshold
+                || Mathf.Abs(_config.Value.StartPosition.x - _config.Value.EndPosition.x) <= _config.Value.SwipeDistanceTreshold)
                 {
                     return;
                 }
@@ -42,7 +37,7 @@ namespace Sagra.Assets._Scripts._General
                     _commandPool.Value.Add(entity);
 
                     ref var component = ref _commandPool.Value.Get(entity);
-                    component.Direction = (_startPosition.x - _endPosition.x) >= 0 ? -1 : 1;
+                    component.Direction = (_config.Value.StartPosition.x - _config.Value.EndPosition.x) >= 0 ? -1 : 1;
                 }
             }
         }

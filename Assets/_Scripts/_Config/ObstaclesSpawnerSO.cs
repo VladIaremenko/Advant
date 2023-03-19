@@ -12,7 +12,7 @@ namespace Sagra.Assets._Scripts._Config
         [HideInInspector]
         public Transform ObstaclesParent;
 
-        [Range(0.1f,10f)]
+        [Range(0.1f, 10f)]
         public float TimeBetweenSpawns;
         public List<EntityHolder> Items;
 

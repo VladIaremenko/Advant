@@ -2,6 +2,7 @@
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
 using Sagra.Assets._Scripts._Components;
+using Sagra.Assets._Scripts._Config;
 using UnityEngine;
 
 namespace Sagra.Assets._Scripts._General
@@ -14,6 +15,7 @@ namespace Sagra.Assets._Scripts._General
         readonly EcsPoolInject<InputCommandComponent> _commandPool = default;
         readonly EcsPoolInject<TranformAnchorsHolderComponent> _anchorsPool = default;
         readonly EcsPoolInject<TranfsormComponent> _transformPool = default;
+        readonly EcsCustomInject<GameConfigSO> _config = default;
 
         public void Run(IEcsSystems systems)
         {
@@ -31,7 +33,7 @@ namespace Sagra.Assets._Scripts._General
                     state.CurrentPositionIndex = state.NextPositionIndex;
 
                     tranfsorm.Transform.DOKill();
-                    tranfsorm.Transform.DOMove(anchors.Anchors[state.NextPositionIndex].position, 1f);
+                    tranfsorm.Transform.DOMove(anchors.Anchors[state.NextPositionIndex].position, _config.Value.PlayerChangeLaneTime);
                 }
 
                 _commandPool.Value.Del(entity);
