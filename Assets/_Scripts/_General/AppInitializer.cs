@@ -12,6 +12,8 @@ namespace Sagra.Assets._Scripts._General
     {
         [SerializeField] private ObstaclesSpawnerSO _spawnerSO;
         [SerializeField] private Transform _obstaclesParent;
+        [SerializeField] private Camera _camera;
+        [SerializeField] private GameConfigSO _gameConfigSO;
 
         private EcsSystems _systems;
         private EcsWorld _world;
@@ -39,7 +41,7 @@ namespace Sagra.Assets._Scripts._General
                 .Add(new ObstaclesCollisionSystem())
                 .Add(new PlayerStateCheckSystem())
                 .DelHere<TriggerComponent>()
-                .Inject(_spawnerSO)
+                .Inject(_spawnerSO, _camera, _gameConfigSO)
                 .Init();
         }
 

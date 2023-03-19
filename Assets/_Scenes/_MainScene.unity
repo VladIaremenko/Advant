@@ -284,6 +284,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnerSO: {fileID: 11400000, guid: 805aed36ca2e2f74eba4bcde91bdc4fd, type: 2}
   _obstaclesParent: {fileID: 1827523817}
+  _camera: {fileID: 519420031}
+  _gameConfigSO: {fileID: 11400000, guid: 5abaadc38f83f154b8c0b00ec0f6db67, type: 2}
 --- !u!1 &198875535
 GameObject:
   m_ObjectHideFlags: 0
