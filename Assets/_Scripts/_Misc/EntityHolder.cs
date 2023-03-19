@@ -1,4 +1,5 @@
 ﻿using Leopotam.EcsLite;
+using Sagra.Assets._Scripts._Config;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,9 +8,10 @@ namespace Sagra.Assets._Scripts._Misc
 {
     public class EntityHolder : MonoBehaviour
     {
+        [SerializeField] private GameConfigSO _gameConfigSO;
         private List<IConvertToEntity> _monoProviders;
 
-        private EcsWorld _world => WorldHolder.EcsWorld;
+        public EcsWorld World => _gameConfigSO.EcsWorld;
 
         private int _entity;
 
@@ -21,8 +23,8 @@ namespace Sagra.Assets._Scripts._Misc
         public void ConvertEntities()
         {
             _monoProviders = GetComponents<IConvertToEntity>().ToList();
-            _entity = _world.NewEntity();
-            _monoProviders.ForEach(x => { x.Convert(_entity, _world); });
+            _entity = World.NewEntity();
+            _monoProviders.ForEach(x => { x.Convert(_entity, World); });
         }
     }
 }

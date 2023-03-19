@@ -16,3 +16,5 @@ MonoBehaviour:
   YBottomDistanceBeforeReset: -10
   ObstacleSpeed: 3
   PlayerChangeLaneTime: 1
+  TimeBeforeReload: 3
+  TimeBetweenSpawns: 0.84

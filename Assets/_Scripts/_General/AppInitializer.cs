@@ -23,8 +23,8 @@ namespace Sagra.Assets._Scripts._General
             _world = new EcsWorld();
             _systems = new EcsSystems(_world);
 
-            WorldHolder.EcsWorld = _world;
             _spawnerSO.Init(_obstaclesParent);
+            _gameConfigSO.Init(_world);
 
             GameBus.ConverEntitiesEvent.Invoke();
 

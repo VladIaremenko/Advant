@@ -21,6 +21,7 @@ namespace Sagra.Assets._Scripts._General
 
                 if(_config.Value.TimeAfterReloadCount >= _config.Value.TimeBeforeReload)
                 {
+                    _config.Value.TimeAfterReloadCount = 0;
                     SceneManager.LoadScene(0);
                 }
 

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Leopotam.EcsLite;
+using UnityEngine;
 
 namespace Sagra.Assets._Scripts._Config
 {
@@ -17,6 +18,12 @@ namespace Sagra.Assets._Scripts._Config
         public float PlayerChangeLaneTime;
         [Range(0.1f, 10)]
         public float TimeBeforeReload = 3;
+        [Range(0.1f, 10f)]
+        public float TimeBetweenSpawns;
+        [Range(0.1f, 3f)]
+        public float SwipeTimeTreshold = 1f;
+        [Range(0.1f, 3f)]
+        public float SwipeDistanceTreshold = 0.2f;
 
         public bool CreateNewEntity { get; set; }
 
@@ -25,10 +32,17 @@ namespace Sagra.Assets._Scripts._Config
         public Vector2 EndPosition { get; set; }
         public float StartTime { get; set; }
         public float EndTime { get; set; }
-        public float SwipeTimeTreshold { get; set; } = 1f;
-        public float SwipeDistanceTreshold { get; set; } = 0.2f;
         public bool GameIsOver { get; set; } = false;
-        public float TimeAfterReloadCount { get; set; } = 0;
+        public float TimeAfterReloadCount { get; set; }
+        public EcsWorld EcsWorld;
+
+        public void Init(EcsWorld ecsWorld)
+        {
+            GameIsOver = false;
+            TimeAfterReloadCount = 0;
+            TimeElapsed = 0;
+            EcsWorld = ecsWorld;
+        }
     }
 }
 

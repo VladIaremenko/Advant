@@ -17,7 +17,7 @@ namespace Sagra.Assets._Scripts._General
         {
             _spawner.Value.TimeSinceLastSpawn += Time.deltaTime;
 
-            if (_spawner.Value.TimeSinceLastSpawn < _spawner.Value.TimeBetweenSpawns)
+            if (_spawner.Value.TimeSinceLastSpawn < _config.Value.TimeBetweenSpawns)
             {
                 return;
             }
