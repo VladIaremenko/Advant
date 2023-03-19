@@ -15,9 +15,9 @@ MonoBehaviour:
   SceneWidth: 5.66
   BackgroundScrollSpeed: 1
   YBottomDistanceBeforeReset: -10
-  ObstacleSpeed: 3
-  PlayerChangeLaneTime: 1
   TimeBeforeReload: 3
-  TimeBetweenSpawns: 0.84
   SwipeTimeTreshold: 1
   SwipeDistanceTreshold: 0.2
+  ObstacleSpeed: 3
+  PlayerChangeLaneTime: 0.5
+  TimeBetweenSpawns: 1

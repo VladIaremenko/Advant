@@ -15,17 +15,24 @@ namespace Sagra.Assets._Scripts._Config
         [Range(-20, -5)]
         public float YBottomDistanceBeforeReset;
         [Range(0.1f, 10)]
-        public float ObstacleSpeed;
-        [Range(0.1f, 10)]
-        public float PlayerChangeLaneTime;
-        [Range(0.1f, 10)]
         public float TimeBeforeReload = 3;
-        [Range(0.1f, 10f)]
-        public float TimeBetweenSpawns;
+
+        [Header("Swipe Settings")]
         [Range(0.1f, 3f)]
         public float SwipeTimeTreshold = 1f;
         [Range(0.1f, 3f)]
         public float SwipeDistanceTreshold = 0.2f;
+
+        [Header("Units speed")]
+        [Range(0.1f, 10)]
+        public float ObstacleSpeed;
+        [Range(0.1f, 10)]
+        public float PlayerChangeLaneTime;
+
+        [Header("TimeBetweenNextObstacleSpawn")]
+        [Range(0.1f, 10f)]
+        public float TimeBetweenSpawns;
+
 
         public bool CreateNewEntity { get; set; }
 
