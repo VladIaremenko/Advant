@@ -1,5 +1,7 @@
 ﻿using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
+using Leopotam.EcsLite.ExtendedSystems;
+using Sagra.Assets._Scripts._Components;
 using Sagra.Assets._Scripts._Config;
 using Sagra.Assets._Scripts._Misc;
 using UnityEngine;
@@ -20,7 +22,7 @@ namespace Sagra.Assets._Scripts._General
             _systems = new EcsSystems(_world);
 
             WorldHolder.EcsWorld = _world;
-            _spawnerSO.ObstaclesParent = _obstaclesParent;
+            _spawnerSO.Init(_obstaclesParent);
 
             GameBus.ConverEntitiesEvent.Invoke();
 
@@ -28,6 +30,7 @@ namespace Sagra.Assets._Scripts._General
 #if UNITY_EDITOR
                 .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
 #endif
+                .DelHere<TriggerComponent>()
                 .Add(new BackgroundSystem())
                 .Add(new PlayerInitSystem())
                 .Add(new PlayerInputSystem())

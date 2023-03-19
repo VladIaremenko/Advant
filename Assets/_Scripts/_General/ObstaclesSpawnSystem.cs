@@ -35,8 +35,6 @@ namespace Sagra.Assets._Scripts._General
                 {
                     if (!_spawner.Value.CreatedItems[i].gameObject.activeInHierarchy)
                     {
-                        Debug.Log("Take from pool");
-
                         ActivateItem(anchors, _spawner.Value.CreatedItems[i]);
                         _useSpawner = false;
                     }

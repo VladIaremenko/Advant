@@ -22,7 +22,7 @@ namespace Sagra.Assets._Scripts._General
 
                 unit.Transform.position += Vector3.down * Time.deltaTime * 3;
 
-                if(unit.Transform.position.y < -5)
+                if(unit.Transform.position.y < -10)
                 {
                     unit.Transform.gameObject.SetActive(false);
                 }

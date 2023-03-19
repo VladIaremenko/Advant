@@ -11,7 +11,7 @@ namespace Sagra.Assets._Scripts._Misc
         public virtual void Convert(int entity, EcsWorld world)
         {
             var pool = world.GetPool<T>();
-            world.GetPool<T>().Add(entity);
+            pool.Add(entity);
 
             ref var component = ref pool.Get(entity);
             component = value;
