@@ -9,6 +9,8 @@ namespace Sagra.Assets._Scripts._Config
         public readonly string ParameterName = "_MainTex";
 
         [Range(0.1f, 10)]
+        public float SceneWidth = 5;
+        [Range(0.1f, 10)]
         public float BackgroundScrollSpeed;
         [Range(-20, -5)]
         public float YBottomDistanceBeforeReset;

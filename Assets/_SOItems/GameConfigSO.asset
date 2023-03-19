@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4d04f68be9e5a4599e71540d56a352, type: 3}
   m_Name: GameConfigSO
   m_EditorClassIdentifier: 
+  SceneWidth: 5.66
   BackgroundScrollSpeed: 1
   YBottomDistanceBeforeReset: -10
   ObstacleSpeed: 3
   PlayerChangeLaneTime: 1
   TimeBeforeReload: 3
   TimeBetweenSpawns: 0.84
+  SwipeTimeTreshold: 1
+  SwipeDistanceTreshold: 0.2
