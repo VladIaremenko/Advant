@@ -1,5 +1,6 @@
 ﻿using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
+using Sagra.Assets._Scripts._Config;
 using Sagra.Assets._Scripts._Misc;
 using UnityEngine;
 
@@ -7,14 +8,19 @@ namespace Sagra.Assets._Scripts._General
 {
     public class AppInitializer : MonoBehaviour
     {
-        EcsSystems _systems;
+        [SerializeField] private ObstaclesSpawnerSO _spawnerSO;
+        [SerializeField] private Transform _obstaclesParent;
+
+        private EcsSystems _systems;
+        private EcsWorld _world;
 
         void Start()
         {
-            var world = new EcsWorld();
-            _systems = new EcsSystems(world);
+            _world = new EcsWorld();
+            _systems = new EcsSystems(_world);
 
-            WorldHolder.EcsWorld = world;
+            WorldHolder.EcsWorld = _world;
+            _spawnerSO.ObstaclesParent = _obstaclesParent;
 
             GameBus.ConverEntitiesEvent.Invoke();
 
@@ -26,7 +32,8 @@ namespace Sagra.Assets._Scripts._General
                 .Add(new PlayerInitSystem())
                 .Add(new PlayerInputSystem())
                 .Add(new PlayerMovementSystem())
-                .Inject()
+                .Add(new ObstaclesSpawnSystem())
+                .Inject(_spawnerSO)
                 .Init();
         }
 
