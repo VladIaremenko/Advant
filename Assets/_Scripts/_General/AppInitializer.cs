@@ -20,6 +20,8 @@ namespace Sagra.Assets._Scripts._General
 
         void Start()
         {
+            Application.targetFrameRate = 60;
+
             _world = new EcsWorld();
             _systems = new EcsSystems(_world);
 

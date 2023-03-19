@@ -22,7 +22,7 @@ namespace Sagra.Assets._Scripts._General
                     continue;
                 }
 
-                unit.Transform.position += Vector3.down * Time.deltaTime * _config.Value.ObstacleSpeed;
+                unit.Transform.position += Vector3.down * Time.fixedDeltaTime * _config.Value.ObstacleSpeed;
 
                 if (unit.Transform.position.y < _config.Value.YBottomDistanceBeforeReset)
                 {
