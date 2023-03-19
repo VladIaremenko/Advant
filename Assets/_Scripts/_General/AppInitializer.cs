@@ -33,6 +33,7 @@ namespace Sagra.Assets._Scripts._General
                 .Add(new PlayerInputSystem())
                 .Add(new PlayerMovementSystem())
                 .Add(new ObstaclesSpawnSystem())
+                .Add(new ObstaclesMovingSystem())
                 .Inject(_spawnerSO)
                 .Init();
         }

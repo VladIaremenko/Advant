@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnerSO: {fileID: 11400000, guid: 805aed36ca2e2f74eba4bcde91bdc4fd, type: 2}
-  _obstaclesParent: {fileID: 0}
+  _obstaclesParent: {fileID: 1827523817}
 --- !u!1 &198875535
 GameObject:
   m_ObjectHideFlags: 0

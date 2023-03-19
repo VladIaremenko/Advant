@@ -8,12 +8,21 @@ namespace Sagra.Assets._Scripts._Config
     public class ObstaclesSpawnerSO : ScriptableObject
     {
         [HideInInspector]
-        public float TimeSinceLastSpaen;
+        public float TimeSinceLastSpawn;
         [HideInInspector]
         public Transform ObstaclesParent;
 
         public float TimeBetweenSpawns;
         public List<EntityHolder> Items;
+
+        [HideInInspector]
+        public List<EntityHolder> CreatedItems;
+
+        public void Init(Transform obstaclesParent)
+        {
+            CreatedItems = new List<EntityHolder>();
+            ObstaclesParent = obstaclesParent;
+        }
     }
 }
 
