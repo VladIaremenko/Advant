@@ -30,13 +30,14 @@ namespace Sagra.Assets._Scripts._General
 #if UNITY_EDITOR
                 .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
 #endif
-                .DelHere<TriggerComponent>()
                 .Add(new BackgroundSystem())
                 .Add(new PlayerInitSystem())
                 .Add(new PlayerInputSystem())
                 .Add(new PlayerMovementSystem())
                 .Add(new ObstaclesSpawnSystem())
                 .Add(new ObstaclesMovingSystem())
+                .Add(new ObstaclesCollisionSystem())
+                .DelHere<TriggerComponent>()
                 .Inject(_spawnerSO)
                 .Init();
         }

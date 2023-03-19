@@ -37,6 +37,7 @@ namespace Sagra.Assets._Scripts._General
                     {
                         ActivateItem(anchors, _spawner.Value.CreatedItems[i]);
                         _useSpawner = false;
+                        break;
                     }
                 }
 

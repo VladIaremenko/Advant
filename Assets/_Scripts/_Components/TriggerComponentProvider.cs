@@ -18,7 +18,11 @@ namespace Sagra.Assets._Scripts._Components
         private void OnTriggerEnter2D(Collider2D collision)
         {
             var pool = _world.GetPool<TriggerComponent>();
-            pool.Add(_entity);
+
+            if (!pool.Has(_entity))
+            {
+                pool.Add(_entity);
+            }
 
             ref var component = ref pool.Get(_entity);
             component.first = gameObject;

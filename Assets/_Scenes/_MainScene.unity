@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 316380102}
   - component: {fileID: 316380100}
   - component: {fileID: 316380101}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Balloon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

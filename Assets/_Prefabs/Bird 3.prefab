@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7272188727662437721}
   - component: {fileID: 7272188727662437720}
   - component: {fileID: 7198705807560134768}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bird 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,6 +126,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.03}
   serializedVersion: 2
-  m_Radius: 0.76
+  m_Radius: 0.73
